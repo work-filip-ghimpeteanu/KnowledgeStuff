@@ -1,0 +1,49 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Performers -->
+    <bean id="duke" class="filip.springidol.performers.impl.Juggler" primary="true">
+        <constructor-arg value="20"/>
+    </bean>
+    <bean id="poeticDuke" class="filip.springidol.performers.impl.PoeticJuggler">
+        <constructor-arg value="15"/>
+        <constructor-arg ref="sonnet29"/>
+    </bean>
+    <bean id="kenny" class="filip.springidol.performers.impl.Instrumentalist"
+          init-method="tuneInstrument"
+          destroy-method="cleanInstrument">
+        <property name="song" value="JingleBells"/>
+        <property name="instrument" ref="piano"/>
+    </bean>
+    <bean id="mike" class="filip.springidol.performers.impl.Magician" primary="true">
+        <property name="instrument" ref="saxophone"/>
+    </bean>
+    <bean id="nino" class="filip.springidol.performers.impl.Magician">
+        <property name="instrument" ref="flute"/>
+    </bean>
+    <bean id="john" class="filip.springidol.performers.impl.Dancer"/>
+
+    <!-- Poems -->
+    <bean id="sonnet29" class="filip.springidol.poems.impl.Sonnet29"/>
+
+    <!-- Instruments -->
+    <bean id="flute" class="filip.springidol.instruments.impl.Flute"/>
+    <bean id="saxophone" class="filip.springidol.instruments.impl.Saxophone"/>
+    <bean id="piano" class="filip.springidol.instruments.impl.Piano"/>
+
+    <!-- Stage -->
+    <bean id="stage" class="filip.springidol.Stage" factory-method="getInstance">
+        <property name="performerList">
+            <list>
+                <ref bean="duke"/>
+                <ref bean="poeticDuke"/>
+                <ref bean="kenny"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
