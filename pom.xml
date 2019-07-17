@@ -12,6 +12,7 @@
         <module>java-stuff</module>
         <module>spring-stuff</module>
         <module>dp-stuff</module>
+        <module>loggin-app</module>
     </modules>
 
     <properties>
