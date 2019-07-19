@@ -1,4 +1,4 @@
-package org.knowledge.filip;
+package org.knowledge.filip.client;
 
 import org.tempuri.*;
 
