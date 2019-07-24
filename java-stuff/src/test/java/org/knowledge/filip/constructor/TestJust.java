@@ -2,7 +2,7 @@ package org.knowledge.filip.constructor;
 
 import org.testng.annotations.Test;
 
-public class JustTest {
+public class TestJust {
 
     @Test
     public void testLeImplemented() {

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.*;
 
-public class StringTest {
+public class TestString {
 
     @Test
     public void sortAlphabetically() {
